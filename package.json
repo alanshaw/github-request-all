@@ -1,6 +1,6 @@
 {
   "name": "github-request-all",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Iterate and collect all pages of objects for a GitHub API request",
   "main": "index.js",
   "scripts": {
