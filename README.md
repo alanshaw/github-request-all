@@ -1,4 +1,4 @@
-# github-request-all [![Dependency Status](https://david-dm.org/alanshaw/github-request-all.svg)](https://david-dm.org/alanshaw/github-request-all)
+# github-request-all [![Build Status](https://travis-ci.org/alanshaw/github-request-all.svg?branch=master)](https://travis-ci.org/alanshaw/github-request-all) [![Dependency Status](https://david-dm.org/alanshaw/github-request-all.svg)](https://david-dm.org/alanshaw/github-request-all)
 Iterate and collect all pages of objects for a GitHub API request.
 
 ## Example
