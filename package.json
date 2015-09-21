@@ -1,0 +1,37 @@
+{
+  "name": "github-request-all",
+  "version": "0.0.0",
+  "description": "Iterate and collect all pages of objects for a GitHub API request",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "keywords": [
+    "github",
+    "paginate",
+    "pagination",
+    "request",
+    "all"
+  ],
+  "author": "Alan Shaw",
+  "license": "ISC",
+  "dependencies": {
+    "async-each": "^0.1.6",
+    "boom": "^2.8.0",
+    "parse-link-header": "^0.4.1",
+    "request": "^2.62.0",
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "standard": "^5.3.1",
+    "tape": "^4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanshaw/github-request-all.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alanshaw/github-request-all/issues"
+  },
+  "homepage": "https://github.com/alanshaw/github-request-all#readme"
+}
