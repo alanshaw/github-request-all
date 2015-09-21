@@ -101,3 +101,30 @@ test('Should get three pages of data', function (t) {
     })
   })
 })
+
+test('Should call onPage callback for each page', function (t) {
+  t.plan(6)
+
+  var data = ['foo', 'bar', 'baz']
+  var server = createTestApiServer(data)
+
+  server.listen(3030, function (err) {
+    t.ifError(err, 'No error starting test API server')
+
+    ghRequestAll({
+      url: 'http://localhost:3030'
+    }, {
+      perPage: 1,
+      onPage: function (results) {
+        t.ok(results, 'A page was retrieved') // Should get 3 of these
+      }
+    }, function (err) {
+      t.ifError(err, 'No error requesting all data')
+
+      server.close(function (err) {
+        t.ifError(err, 'No error stopping test API server')
+        t.end()
+      })
+    })
+  })
+})

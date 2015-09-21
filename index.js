@@ -29,6 +29,8 @@ module.exports = function (reqOpts, opts, cb) {
 
     var links = parseLinkHeader(res.headers.link)
 
+    if (opts.onPage) opts.onPage(body)
+
     if (!links) return cb(null, body)
 
     var lastPage = parseInt(links.last.page, 10)
@@ -53,6 +55,7 @@ module.exports = function (reqOpts, opts, cb) {
           return cb(Boom.create(res.statusCode, 'Unexpected status'))
         }
 
+        if (opts.onPage) opts.onPage(body)
         cb(null, body)
       })
     }, function (err, bodies) {

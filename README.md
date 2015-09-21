@@ -6,23 +6,23 @@ Iterate and collect all pages of objects for a GitHub API request.
 ```js
 var ghRequestAll = require('github-request-all')
 
-var requestOptions = {
+var requestOpts = {
   url: 'https://api.github.com/users/alanshaw/repos',
   headers: {
     'User-Agent': 'Your application UA' // Required by github
   }
 }
 
-ghRequestAll(requestOptions, function (err, results) {
+ghRequestAll(requestOpts, function (err, results) {
   if (err) throw err
   console.log(results) // All repos for alanshaw
 })
 ```
 
-## `ghRequestAll(requestOptions, cb)`
-Request all pages of the paginated github request. `requestOptions` are options passed to [`request`](https://www.npmjs.com/package/request) and should, at minimum include the URL to request. `cb` receives the results array.
+## `ghRequestAll(requestOpts, cb)`
+Request all pages of the paginated github request. `requestOpts` are options passed to [`request`](https://www.npmjs.com/package/request) and should, at minimum include the URL to request. `cb` receives the results array.
 
-## `ghRequestAll(requestOptions, opts, cb)`
+## `ghRequestAll(requestOpts, opts, cb)`
 As above, but the second parameter `opts` are options for github-request-all:
 
 ### `opts.userAgent`
@@ -30,3 +30,6 @@ Set the "User-Agent" header (default 'github-request-all').
 
 ### `opts.perPage`
 Set the number of items requested in a page (default 100).
+
+### `opts.onPage`
+Callback called when each page is retrieved.
