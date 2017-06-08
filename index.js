@@ -31,6 +31,8 @@ module.exports = function (reqOpts, opts, cb) {
 
     if (opts.onPage) opts.onPage(body)
 
+    body = opts.filter ? body.filter(opts.filter) : body
+
     if (!links) return cb(null, body)
 
     var lastPage = parseInt(links.last.page, 10)
@@ -56,6 +58,9 @@ module.exports = function (reqOpts, opts, cb) {
         }
 
         if (opts.onPage) opts.onPage(body)
+
+        body = opts.filter ? body.filter(opts.filter) : body
+
         cb(null, body)
       })
     }, function (err, bodies) {

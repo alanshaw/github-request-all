@@ -33,3 +33,6 @@ Set the number of items requested in a page (default 100).
 
 ### `opts.onPage`
 Callback called when each page is retrieved.
+
+### `opts.filter`
+A function to filter the items collected (applied **after** `opts.onPage` is called). A callback for [`Array.prototype.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter?v=example).

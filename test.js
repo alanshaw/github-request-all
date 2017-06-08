@@ -128,3 +128,30 @@ test('Should call onPage callback for each page', function (t) {
     })
   })
 })
+
+test('Should filter results', function (t) {
+  t.plan(5)
+
+  var data = ['foo', 'bar', 'baz']
+  var server = createTestApiServer(data)
+
+  server.listen(3030, function (err) {
+    t.ifError(err, 'No error starting test API server')
+
+    ghRequestAll({
+      url: 'http://localhost:3030'
+    }, {
+      filter: function (item) { return item === 'foo' }
+    }, function (err, results) {
+      t.ifError(err, 'No error requesting all data')
+
+      t.equal(results.length, 1)
+      t.equal(results[0], 'foo')
+
+      server.close(function (err) {
+        t.ifError(err, 'No error stopping test API server')
+        t.end()
+      })
+    })
+  })
+})
