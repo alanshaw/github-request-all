@@ -17,7 +17,7 @@ function createTestApiServer (data) {
 
     res.writeHead(200, {
       'Content-Type': 'application/json',
-      'Link': '<' + apiUrl + '?page=' + (page + 1) + '>; rel="next",\n<' + apiUrl + '?page=' + lastPage + '>; rel="last"'
+      'Link': '<' + apiUrl + '?page=' + (page + 1) + '>; rel="next", <' + apiUrl + '?page=' + lastPage + '>; rel="last"'
     })
 
     res.write(JSON.stringify(results, null, 2))

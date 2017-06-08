@@ -16,14 +16,14 @@
   "author": "Alan Shaw",
   "license": "ISC",
   "dependencies": {
-    "async-each": "^0.1.6",
-    "boom": "^2.8.0",
-    "parse-link-header": "^0.4.1",
-    "request": "^2.62.0",
+    "async-each": "^1.0.1",
+    "boom": "^5.1.0",
+    "parse-link-header": "^1.0.1",
+    "request": "^2.81.0",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
-    "standard": "^5.3.1",
+    "standard": "^10.0.2",
     "tape": "^4.2.0"
   },
   "repository": {
