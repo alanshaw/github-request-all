@@ -20,7 +20,7 @@ module.exports = function (reqOpts, opts, cb) {
 
   request(reqOpts, function (err, res, body) {
     if (err) {
-      return cb(Boom.wrap(err, res.statusCode, 'Failed to send request'))
+      return cb(Boom.wrap(err, 500, 'Failed to send request'))
     }
 
     if (res.statusCode !== 200) {
@@ -50,7 +50,7 @@ module.exports = function (reqOpts, opts, cb) {
 
       request.get(reqOptsClone, function (err, res, body) {
         if (err) {
-          return cb(Boom.wrap(err, res.statusCode, 'Failed to get page ' + page))
+          return cb(Boom.wrap(err, 500, 'Failed to get page ' + page))
         }
 
         if (res.statusCode !== 200) {

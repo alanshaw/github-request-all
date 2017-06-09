@@ -154,4 +154,17 @@ test('Should filter results', function (t) {
       })
     })
   })
+
+  test('Should pass error to callback for invalid URL', function (t) {
+    t.plan(1)
+
+    ghRequestAll({
+      url: 'junk'
+    }, {
+      filter: function (item) { return item === 'foo' }
+    }, function (err, results) {
+      t.ok(err, 'Error was passed to callback')
+      t.end()
+    })
+  })
 })
